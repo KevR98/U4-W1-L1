@@ -1,5 +1,5 @@
-import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Scanner;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
@@ -8,38 +8,35 @@ public class Main {
 
         System.out.println("--------------------- ESERCIZIO 1 -------------------");
         System.out.println("--------------------- MOLTIPLICAZIONE -------------------");
-        int res = Multiple(5, 3);
+        int res = multiple(5, 3);
         System.out.println("Il risultato è: " + res);
 
 
         System.out.println("--------------------- CONCATENARE -------------------");
-        String frase = Concat("Lunedì ", 8);
+        String frase = concat("Ciao ", 8);
         System.out.println(frase);
 
 
         System.out.println("--------------------- ARRAY -------------------");
-        String[] elenco = inserisciInArray();
+        String[] arr = new String[6];
+        String[] elenco = inserisciInArray(arr, "ciao");
         System.out.println(Arrays.toString(elenco));
-        ArrayList<String> nome = new ArrayList<>(Arrays.asList(inserisciInArray()));
-        nome.add(3, "Federico");
-        System.out.println(nome);
 
 
         System.out.println("--------------------- ESERCIZIO 2 -------------------");
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Prima stringa: ");
+        String parola1 = scanner.nextLine();
+        System.out.println("Seconda stringa: ");
+        String parola2 = scanner.nextLine();
+        System.out.println("Terza stringa: ");
+        String parola3 = scanner.nextLine();
 
-//        Scanner scanner = new Scanner(System.in);
-//        System.out.println("Prima stringa: ");
-//        String parola1 = scanner.nextLine();
-//        System.out.println("Seconda stringa: ");
-//        String parola2 = scanner.nextLine();
-//        System.out.println("Terza stringa: ");
-//        String parola3 = scanner.nextLine();
-//
-//        String ris = parola1 + " " + parola2 + " " + parola3;
-//        System.out.println(ris);
-//
-//        String ris2 = parola3 + " " + parola2 + " " + parola1;
-//        System.out.println(ris2);
+        String ris = parola1 + " " + parola2 + " " + parola3;
+        System.out.println(ris);
+
+        String ris2 = parola3 + " " + parola2 + " " + parola1;
+        System.out.println(ris2);
 
         System.out.println("--------------------- ESERCIZIO 3 -------------------");
         System.out.println("--------------------- PERIMETRO RETTANGOLO -------------------");
@@ -56,16 +53,21 @@ public class Main {
         System.out.println(result);
     }
 
-    public static int Multiple(int num1, int num2) {
+    public static int multiple(int num1, int num2) {
         return num1 * num2;
     }
 
-    public static String Concat(String str, int x) {
+    public static String concat(String str, int x) {
         return str + x;
     }
 
-    public static String[] inserisciInArray() {
-        String[] arr = {"Kevin", "Nicole", "Giuseppe", "Giovanni", "Franco"};
+    public static String[] inserisciInArray(String[] arr, String parola) {
+        arr[0] = "ffff";
+        arr[1] = "cccc";
+        arr[2] = "dddd";
+        arr[3] = parola;
+        arr[4] = "gggg";
+        arr[5] = "hhhh";
         return arr;
     }
 
